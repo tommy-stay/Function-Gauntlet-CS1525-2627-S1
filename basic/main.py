@@ -1,13 +1,13 @@
-def is_even(number):
+def is_even(number: int) -> bool:
     """ Return True if number is even and False if it is odd.
 
     :param number:
     :return:
     """
-    pass
+    return True
 
 
-def count_vowels(text):
+def count_vowels(text: str) -> int:
     """Count how many vowels (a, e, i, o, u) are in text.
     Uppercase and lowercase vowels should both count.
 
