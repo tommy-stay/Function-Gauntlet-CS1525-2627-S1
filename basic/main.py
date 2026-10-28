@@ -63,17 +63,18 @@ def larger_number(a: int, b: int) -> int:
         return b
 
 
-def average_two(a, b):
+def average_two(a: int, b: int) -> float:
     """Calculate and return the average of two integers.
 
     :param a:
     :param b:
     :return:
     """
-    pass
+    calculated_average = (a + b) / 2
+    return calculated_average
 
 
-def can_afford(balance, cost):
+def can_afford(balance: float, cost: float) -> bool:
     """Return True if balance is greater than or equal to cost.
     Otherwise, return False.
 
@@ -81,10 +82,13 @@ def can_afford(balance, cost):
     :param cost:
     :return:
     """
-    pass
+    if balance >= cost:
+        return True
+    else:
+        return False
 
 
-def repeat_text(text, times):
+def repeat_text(text: str, times: int) -> str:
     """Return one string containing text repeated the given
     number of times.
 
@@ -95,10 +99,11 @@ def repeat_text(text, times):
     :param times:
     :return:
     """
-    pass
+    calculated_repeat_text = text * times
+    return calculated_repeat_text
 
 
-def contains_word(sentence, word):
+def contains_word(sentence: str, word: str) -> bool:
     """Return True if word appears somewhere inside sentence.
     Otherwise, return False.
 
@@ -106,10 +111,13 @@ def contains_word(sentence, word):
     :param word:
     :return:
     """
-    pass
+    if word in sentence:
+        return True
+    else:
+        return False
 
 
-def calculate_tip(cost, percent):
+def calculate_tip(cost: float, percent: float) -> float:
     """Calculate and return the amount of tip.
 
     Example:
@@ -119,10 +127,11 @@ def calculate_tip(cost, percent):
     :param percent:
     :return:
     """
-    pass
+    calculated_cost_tip = cost * (percent / 100)
+    return calculated_cost_tip
 
 
-def make_initials(first_name, last_name):
+def make_initials(first_name: str, last_name: str) -> str:
     """Return the uppercase first letters of the two names.
 
     Example:
@@ -132,10 +141,11 @@ def make_initials(first_name, last_name):
     :param last_name:
     :return:
     """
-    pass
+    calculated_intials = first_name[0].upper() + last_name[0].upper()
+    return calculated_intials
 
 
-def percent_score(points, possible):
+def percent_score(points: float, possible: float) -> float:
     """Calculate what percentage of the possible points
     were earned. Return None if possible is less than 1.
 
@@ -146,10 +156,13 @@ def percent_score(points, possible):
     :param possible:
     :return:
     """
-    pass
+    if possible < 1:
+        return None
+    calculated_percent = (points / possible) * 100
+    return calculated_percent
 
 
-def is_between(number, minimum, maximum):
+def is_between(number: float, minimum: float, maximum: float) -> bool:
     """Return True if number is between minimum and maximum,
     including the minimum and maximum values.
 
@@ -158,10 +171,13 @@ def is_between(number, minimum, maximum):
     :param maximum:
     :return:
     """
-    pass
+    if minimum <= number <= maximum:
+        return True
+    else:
+        return False
 
 
-def all_different(a, b, c):
+def all_different(a: str, b: str, c: str) -> bool:
     """Check if three strings are different.
     Return True if all three strings are different.
     Otherwise,return False.
@@ -171,10 +187,13 @@ def all_different(a, b, c):
     :param c:
     :return:
     """
-    pass
+    if a != b and b != c and a!= c:
+        return True
+    else:
+        return False
 
 
-def average_three(a, b, c):
+def average_three(a: int, b: int, c: int) -> float:
     """Calculate and return the average of three integers.
 
     :param a:
@@ -182,10 +201,11 @@ def average_three(a, b, c):
     :param c:
     :return:
     """
-    pass
+    calculated_average = (a + b + c) / 3
+    return calculated_average
 
 
-def describe_temperature(temperature, cold_limit, hot_limit):
+def describe_temperature(temperature: float, cold_limit: float, hot_limit: float) -> str:
     """Returns a string describing the temperature.
     Return "cold" if temperature is below cold_limit,
     "hot" if temperature is above hot_limit,
@@ -196,7 +216,12 @@ def describe_temperature(temperature, cold_limit, hot_limit):
     :param hot_limit:
     :return:
     """
-    pass
+    if temperature < cold_limit:
+        return "It's cold."
+    if temperature > hot_limit:
+        return "It's hot."
+    else:
+        return "It's just right."
 
 if __name__ == "__main__":
     """
@@ -205,5 +230,19 @@ if __name__ == "__main__":
     Additionally, there is a test file loaded into
     this folder that you can run a test on your code.
     """
-    pass
+    print("Is the number 10 even?", is_even(10))
+    print("Count the vowels in 'Hello World':", count_vowels("Hello World"))
+    print("What is 25 Celsius in Fahrenheit:", celsius_to_fahrenheit(25))
+    print("What is the reverse of 'robot':", reverse_text("robot"))
+    print("Which is larger? 10 or 20?", larger_number(10,20))
+    print("What is the average of 4 and 6?", average_two(4,6))
+    print("Can I afford 50 with 40 balance?", can_afford(40,50))
+    print("Can you repeat 'Hi' 5 times?", repeat_text("Hi", 5))
+    print("Does 'Computer Science 15 class' have the word 'class'?:", ("Computer Science 15 class", "class"))
+    print("Can you calculate the tip?", calculate_tip(20, 10))
+    print("What are the initials in this name?", make_initials("Tomi", "Babasola"))
+    print("What is my test percentage?", percent_score(28,30))
+    print("Is 8 in between 1 and 10?", is_between(8, 1, 10))
+    print("What is the average of these numbers? 10, 25, 50", average_three(10,25,50))
+    print("What is the temperature?", describe_temperature(25, 10, 55))
 
