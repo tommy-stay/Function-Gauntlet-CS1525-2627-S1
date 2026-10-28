@@ -4,10 +4,11 @@ def is_even(number: int) -> bool:
     :param number:
     :return:
     """
-    if number / 2 == 0:
-        return True
+    if number % 2 == 0:
+        calculated_even = True
     else:
-        return False
+        calculated_even = False
+    return calculated_even
 
 
 
@@ -20,7 +21,8 @@ def count_vowels(text: str) -> int:
     :return:
     """
     count = 0
-    for char in "aeiou":
+    for char in text.lower():
+        if char in "aeiou":
             count += 1
     calculated_vowels = count
     return calculated_vowels
@@ -32,7 +34,7 @@ def celsius_to_fahrenheit(celsius: float) -> float:
     :param celsius:
     :return:
     """
-    calculated_temperature = (9.0/5.0 * celsius + 32) + 32
+    calculated_temperature = (9.0/5.0 * celsius) + 32
     return calculated_temperature
 
 
@@ -217,11 +219,11 @@ def describe_temperature(temperature: float, cold_limit: float, hot_limit: float
     :return:
     """
     if temperature < cold_limit:
-        return "It's cold."
+        return "cold"
     if temperature > hot_limit:
-        return "It's hot."
+        return "hot"
     else:
-        return "It's just right."
+        return "comfortable"
 
 if __name__ == "__main__":
     """

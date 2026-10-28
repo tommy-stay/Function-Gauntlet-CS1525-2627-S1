@@ -54,6 +54,8 @@ def initials_match(first_name: str, last_name: str, expected_initials: str) -> b
     :return: True if they match, False otherwise.
     """
     actual = (first_name[0] + last_name[0]).upper()
+
+    expected_initials = expected_initials.upper()
     if actual == expected_initials.upper():
         calculated_initials = True
     else:
@@ -61,5 +63,17 @@ def initials_match(first_name: str, last_name: str, expected_initials: str) -> b
     return calculated_initials
 
 if __name__ == '__main__':
-    print("Is this temperature in the safe range? (25C, 60F, 90F)", temperature_in_safe_range(25, 60, 90))
-    
+    print("Is this temperature in the safe range? (25C, 60F, 90F):", temperature_in_safe_range(25, 60, 90))
+    print("Can I afford to give a tip? (100 balance, 80 cost, 15 tip):", can_afford_with_tip(100, 80, 15))
+    print("Does this score meet the average? (80, 85, 90, 80):", meets_average(80, 85, 90, 80))
+    print("Do the initials match the name? ('Tomi', 'Babasola', 'tb'):", initials_match('Tomi', 'Babasola', 'tb'))
+
+
+if __name__ == '__main__':
+    input = input("Enter a number: ")
+
+    if input.isdigit():
+        number = int(input)
+        print(f"Valid number: {number}")
+    else:
+        print("That's not valid. Only digits allowed.")
