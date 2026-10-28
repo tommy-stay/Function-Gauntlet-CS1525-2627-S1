@@ -4,29 +4,39 @@ def is_even(number: int) -> bool:
     :param number:
     :return:
     """
-    return True
+    if number / 2 == 0:
+        return True
+    else:
+        return False
+
 
 
 def count_vowels(text: str) -> int:
     """Count how many vowels (a, e, i, o, u) are in text.
     Uppercase and lowercase vowels should both count.
 
+
     :param text:
     :return:
     """
-    pass
+    count = 0
+    for char in "aeiou":
+            count += 1
+    calculated_vowels = count
+    return calculated_vowels
 
 
-def celsius_to_fahrenheit(celsius):
+def celsius_to_fahrenheit(celsius: float) -> float:
     """Convert a Celsius temperature to Fahrenheit.
 
     :param celsius:
     :return:
     """
-    pass
+    calculated_temperature = (9.0/5.0 * celsius + 32) + 32
+    return calculated_temperature
 
 
-def reverse_text(text):
+def reverse_text(text: str) -> str:
     """Return the characters in text in reverse order.
 
     Example:
@@ -35,10 +45,11 @@ def reverse_text(text):
     :param text:
     :return:
     """
-    pass
+    calculated_text = text[::-1]
+    return calculated_text
 
 
-def larger_number(a, b):
+def larger_number(a: int, b: int) -> int:
     """Return whichever of the two integers is larger.
     If they are equal, return either value.
 
@@ -46,7 +57,10 @@ def larger_number(a, b):
     :param b:
     :return:
     """
-    pass
+    if a > b:
+        return a
+    else:
+        return b
 
 
 def average_two(a, b):
